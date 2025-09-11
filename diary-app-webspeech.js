@@ -1,6 +1,6 @@
 // アプリケーション設定
 const CONFIG = {
-    OPENAI_API_KEY: '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',
+    OPENAI_API_KEY: 'sk-proj-',
     SYSTEM_PROMPT: 'あなたは親しみやすく共感的な日記アシスタントです。ユーザーとの自然な会話を通じて、日記作成をサポートしてください。ユーザーの話を聞き、適切なタイミングで感情や体験について掘り下げ質問をしてください。会話が十分に進んだら、内容を整理して素敵な日記エントリーを作成してください。'
 };
 
