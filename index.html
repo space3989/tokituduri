@@ -14,6 +14,7 @@
             <div class="nav-buttons">
                 <button class="nav-btn active" data-screen="chat">💬 チャット</button>
                 <button class="nav-btn" data-screen="diary-list">📖 日記一覧</button>
+                <button class="nav-btn" data-screen="settings">⚙️ 設定</button>
             </div>
         </div>
     </nav>
@@ -91,6 +92,70 @@
                 </div>
             </div>
         </div>
+
+        <!-- 設定画面 -->
+        <div id="settings-screen" class="screen">
+            <div class="screen-header">
+                <h2>設定</h2>
+            </div>
+
+            <div class="settings-container">
+                <div class="setting-group">
+                    <h3>OpenAI API設定</h3>
+                    <div class="setting-item">
+                        <label for="api-key-input">APIキー:</label>
+                        <input type="password" id="api-key-input" class="api-key-input" placeholder="sk-で始まるAPIキーを入力してください">
+                        <button id="save-api-key-btn" class="btn btn--primary">保存</button>
+                    </div>
+                    <div class="setting-item">
+                        <label for="model-select">使用モデル:</label>
+                        <select id="model-select" class="model-select">
+                            <option value="gpt-3.5-turbo">GPT-3.5 Turbo (安価・高速)</option>
+                            <option value="gpt-4">GPT-4 (高品質・高価)</option>
+                            <option value="gpt-4-turbo">GPT-4 Turbo (バランス)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <h3>音声設定</h3>
+                    <div class="setting-item">
+                        <label for="voice-rate">話速:</label>
+                        <input type="range" id="voice-rate" min="0.5" max="2" step="0.1" value="1">
+                        <span id="voice-rate-value">1.0</span>
+                    </div>
+                    <div class="setting-item">
+                        <label for="voice-pitch">音程:</label>
+                        <input type="range" id="voice-pitch" min="0" max="2" step="0.1" value="1">
+                        <span id="voice-pitch-value">1.0</span>
+                    </div>
+                    <div class="setting-item">
+                        <button id="test-voice-btn" class="btn btn--voice">🔊 音声テスト</button>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <h3>データ管理</h3>
+                    <div class="setting-item">
+                        <button id="export-data-btn" class="btn btn--secondary">📥 日記データをエクスポート</button>
+                        <button id="import-data-btn" class="btn btn--secondary">📤 日記データをインポート</button>
+                        <input type="file" id="import-file" accept=".json" style="display: none;">
+                    </div>
+                    <div class="setting-item">
+                        <button id="clear-all-data-btn" class="btn btn--error">🗑️ 全データを削除</button>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <h3>アプリ情報</h3>
+                    <div class="setting-item">
+                        <p><strong>時綴 (ときつづり)</strong> v1.0.0</p>
+                        <p>AI を活用した日記作成アプリケーション</p>
+                        <p>音声認識・音声合成・自動日記生成機能搭載</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!-- ローディングオーバーレイ -->
@@ -124,6 +189,7 @@
             </div>
         </div>
     </div>
-    <script type="module" src="/src/main.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
